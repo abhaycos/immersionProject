@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vehicle List</title>
+</head>
+<body>
+  <h1>Vehicles</h1>
+  <a href="/add">Add Vehicle</a>
+  <table border="1">
+    <tr>
+      <th>Name</th><th>Price</th><th>Image</th><th>Description</th><th>Brand</th><th>Actions</th>
+    </tr>
+    <% vehicles.forEach(vehicle => { %>
+      <tr>
+        <td><%= vehicle.vechilename %></td>
+        <td><%= vehicle.price %></td>
+        <td><img src="<%= vehicle.image %>" alt="image" width="100"/></td>
+        <td><%= vehicle.desc %></td>
+        <td><%= vehicle.brand %></td>
+        <td>
+          <a href="/edit/<%= vehicle.id %>">Edit</a>
+          <form action="/delete/<%= vehicle.id %>" method="POST" style="display:inline;">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= vehicle ? 'Edit' : 'Add' %> Vehicle</title>
+</head>
+<body>
+  <h1><%= vehicle ? 'Edit' : 'Add' %> Vehicle</h1>
+  <form action="<%= vehicle ? '/edit/' + vehicle.id : '/add' %>" method="POST">
+    <label>Name: <input type="text" name="vechilename" value="<%= vehicle ? vehicle.vechilename : '' %>" required></label><br>
+    <label>Price: <input type="number" name="price" value="<%= vehicle ? vehicle.price : '' %>" required></label><br>
+    <label>Image URL: <input type="text" name="image" value="<%= vehicle ? vehicle.image : '' %>" required></label><br>
+    <label>Description: <input type="text" name="desc" value="<%= vehicle ? vehicle.desc : '' %>" required></label><br>
+    <label>Brand: <input type="text" name="brand" value="<%= vehicle ? vehicle.brand : '' %>" required></label><br>
+    <button type="submit"><%= vehicle ? 'Update' : 'Add' %></button>
+  </form>
+  <a href="/">Back to List</a>
+</body>
+</html>
